@@ -32,28 +32,26 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-
     var deviceSize = MediaQuery.of(context).size;
     int _currentIndex = 0;
-    var _scaffoldKey = GlobalKey<ScaffoldState>();
+    // var _scaffoldKey = GlobalKey<ScaffoldState>();
 
     return Scaffold(
-      endDrawerEnableOpenDragGesture: false,
-      key: _scaffoldKey,
+      // key: _scaffoldKey,
       endDrawer: Drawer(
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(20,0,20,40),
+          padding: const EdgeInsets.fromLTRB(20, 0, 20, 40),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Container(
                 alignment: Alignment.topRight,
                 child: IconButton(
-                  onPressed: ()=> Navigator.pop(context),
+                  onPressed: () => Navigator.pop(context),
                   icon: Icon(Icons.close),
                 ),
               ),
-              SizedBox(height: deviceSize.height*0.02),
+              SizedBox(height: deviceSize.height * 0.02),
               kListTile(title: "在庫車"),
               kListTile(title: "認定中古車"),
               kListTile(title: "下取り"),
@@ -98,7 +96,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         actions: [
           Padding(
-            padding: EdgeInsets.only(right : 30.0),
+            padding: EdgeInsets.only(right: 30.0),
             child: Container(
               width: 280,
               child: Row(
@@ -106,8 +104,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 children: [
                   headerElement(title: 'ショップ'),
                   headerElement(title: 'アカウント'),
-                  headerElement(title: 'メニュー',onTapped: ()=> _scaffoldKey.currentState!.openEndDrawer(),
-                  // headerElement(title: 'メニュー',onTapped: ()=> Scaffold.of(context).openEndDrawer(),
+                  Builder(
+                    builder: (context) => headerElement(
+                        title: 'メニュー',
+                        onTapped: () => Scaffold.of(context).openEndDrawer()),
                   ),
                 ],
               ),
@@ -116,13 +116,14 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
       ),
       extendBodyBehindAppBar: true,
-      body: Scrollbar(
-        child: SingleChildScrollView(
+      endDrawerEnableOpenDragGesture: false,
+      body: SingleChildScrollView(
+        child: Scrollbar(
           child: Column(
             children: [
               CarouselSlider(
                 options: CarouselOptions(
-                  height:deviceSize.height,
+                  height: deviceSize.height,
                   enableInfiniteScroll: false,
                   scrollDirection: Axis.vertical,
                   autoPlay: false,
