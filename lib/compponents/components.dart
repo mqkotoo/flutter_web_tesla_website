@@ -152,7 +152,9 @@ class _scrollItemState extends State<scrollItem> {
                         style: TextStyle(
                             wordSpacing: 2,
                             fontSize: 15,
-                            fontWeight: FontWeight.w400),
+                            fontWeight: FontWeight.w400,
+                          color: Colors.black
+                        ),
                         children: <TextSpan>[
                           TextSpan(
                               text: '詳細はこちら',
@@ -160,7 +162,10 @@ class _scrollItemState extends State<scrollItem> {
                                   decoration: TextDecoration.underline,
                                   wordSpacing: 2,
                                   fontSize: 15,
-                                  fontWeight: FontWeight.w400)),
+                                  fontWeight: FontWeight.w400,
+                                color : Colors.black,
+                              ),
+                          ),
                         ],
                       ),
                     ),
