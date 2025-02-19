@@ -11,7 +11,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -34,10 +33,8 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     var deviceSize = MediaQuery.of(context).size;
     int _currentIndex = 0;
-    // var _scaffoldKey = GlobalKey<ScaffoldState>();
 
     return Scaffold(
-      // key: _scaffoldKey,
       endDrawer: Drawer(
         child: Padding(
           padding: const EdgeInsets.fromLTRB(20, 0, 20, 40),
