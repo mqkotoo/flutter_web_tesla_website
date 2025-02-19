@@ -24,12 +24,10 @@ Widget headerLogoText({required String title}) {
 class headerElement extends StatefulWidget {
   final String title;
   void Function()? onTapped;
-  // Color backgroundColor = Colors.transparent;
   headerElement({
     Key? key,
     required this.title,
     this.onTapped
-    // required this.backgroundColor,
   }) : super(key: key);
 
   @override
@@ -228,20 +226,6 @@ class Buttons extends StatelessWidget {
     );
   }
 }
-
-// Widget kListTile({required String title}) {
-//   return ListTile(
-//       title: Container(
-//         height: 40,
-//         alignment: Alignment.centerLeft,
-//         decoration: BoxDecoration(
-//           borderRadius: BorderRadius.circular(20),
-//         ),
-//           child: Text(title),
-//       ),
-//       onTap: () {},
-//   );
-// }
 
 class kListTile extends StatefulWidget {
   final String title;
